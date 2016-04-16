@@ -10,19 +10,6 @@
         <permission>android.permission.WRITE_EXTERNAL_STORAGE</permission>
         <permission>android.permission.ACCESS_COARSE_LOCATION</permission>
         <method>
-            <name>showWithPriceFloor</name>
-            <comment></comment>
-            <returntype>boolean</returntype>
-            <parameter>
-                <name>ba</name>
-                <type>anywheresoftware.b4a.BA</type>
-            </parameter>
-            <parameter>
-                <name>adType</name>
-                <type>int</type>
-            </parameter>
-        </method>
-        <method>
             <name>cache</name>
             <comment></comment>
             <returntype>void</returntype>
@@ -46,19 +33,6 @@
             <parameter>
                 <name>autoCache</name>
                 <type>boolean</type>
-            </parameter>
-        </method>
-        <method>
-            <name>isLoadedWithPriceFloor</name>
-            <comment></comment>
-            <returntype>boolean</returntype>
-            <parameter>
-                <name>ba</name>
-                <type>anywheresoftware.b4a.BA</type>
-            </parameter>
-            <parameter>
-                <name>adType</name>
-                <type>int</type>
             </parameter>
         </method>
         <method>
@@ -87,6 +61,23 @@
                 <type>int</type>
             </parameter>
         </method>
+		<method>
+            <name>showWithPlacement</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>adType</name>
+                <type>int</type>
+            </parameter>
+			<parameter>
+                <name>placement</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
         <method>
             <name>setOnLoadedTriggerBoth</name>
             <comment></comment>
@@ -111,6 +102,45 @@
             <parameter>
                 <name>adType</name>
                 <type>int</type>
+            </parameter>
+        </method>
+		<method>
+            <name>isLoadedWithPriceFloor</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>adType</name>
+                <type>int</type>
+            </parameter>
+        </method>
+		<method>
+            <name>isLoadedWithPriceFloorWithPlacement</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>adType</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>placement</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+		<method>
+            <name>requestAndroidMPermissions</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
             </parameter>
         </method>
         <method>
@@ -152,10 +182,11 @@
             <name>disableLocationPermissionCheck</name>
             <comment></comment>
             <returntype>void</returntype>
-            <parameter>
-                <name>network</name>
-                <type>java.lang.String</type>
-            </parameter>
+        </method>
+		<method>
+            <name>disableWriteExternalStoragePermissionCheck</name>
+            <comment></comment>
+            <returntype>void</returntype>
         </method>
         <method>
             <name>trackInAppPurchase</name>
@@ -335,6 +366,6 @@
             <returntype>int</returntype>
         </field>
     </class>
-    <version>1.14</version>
+    <version>1.1412</version>
     <author>Appodeal</author>
 </root>
