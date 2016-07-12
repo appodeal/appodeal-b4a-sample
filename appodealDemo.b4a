@@ -23,11 +23,11 @@ Library2=appodealb4a
 	#AdditionalRes: D:\Dropbox\Appodeal\appodeal-demos\appodeal-b4a-sample\additional\res_unity_ads, com.unity3d.ads.android
 	#AdditionalJar: unity-ads-1.5.6.jar
 	#AdditionalJar: flurry-analytics-6.2.0.jar
-	#AdditionalJar: applovin-6.1.5.jar
-	#AdditionalJar: appodeal-1.14.14.jar
+	#AdditionalJar: applovin-6.2.2.jar
+	#AdditionalJar: appodeal-1.14.15.jar
 	#AdditionalJar: chartboost-6.4.1.jar
-	#AdditionalJar: inmobi-5.3.0.jar
-	#AdditionalJar: my-target-4.3.10.jar
+	#AdditionalJar: inmobi-5.3.1.jar
+	#AdditionalJar: my-target-4.5.1.jar
 	#AdditionalJar: yandex-metrica-2.41.jar
 #End Region
 

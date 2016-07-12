@@ -343,11 +343,6 @@
 			</parameter>
         </method>
         <field>
-            <name>BANNER_CENTER</name>
-            <comment></comment>
-            <returntype>int</returntype>
-        </field>
-        <field>
             <name>BANNER</name>
             <comment></comment>
             <returntype>int</returntype>
