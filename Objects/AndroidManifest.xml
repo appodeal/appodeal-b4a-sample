@@ -36,7 +36,7 @@
 		  <activity android:name="org.nexage.sourcekit.mraid.MRAIDBrowser" android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />
 		  <activity android:name="com.appodeal.ads.networks.vpaid.VPAIDActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 		  <activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent" />
-		  <activity android:name="ru.mail.android.mytarget.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+		  <activity android:name="com.my.target.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 		  <activity android:name="org.nexage.sourcekit.vast.activity.VPAIDActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 		  <activity android:name="org.nexage.sourcekit.vast.activity.VASTActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 		  <activity android:name="com.appodeal.ads.networks.SpotXActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
