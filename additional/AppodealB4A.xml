@@ -36,6 +36,33 @@
             </parameter>
         </method>
         <method>
+            <name>disableWriteExternalStoragePermissionCheck</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>requestAndroidMPermissions</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setCustomBooleanRule</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>name</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
             <name>disableNetwork</name>
             <comment></comment>
             <returntype>void</returntype>
@@ -46,6 +73,15 @@
             <parameter>
                 <name>network</name>
                 <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>initUserSettings</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
             </parameter>
         </method>
         <method>
@@ -61,21 +97,17 @@
                 <type>int</type>
             </parameter>
         </method>
-		<method>
-            <name>showWithPlacement</name>
+        <method>
+            <name>setCustomDoubleRule</name>
             <comment></comment>
-            <returntype>boolean</returntype>
+            <returntype>void</returntype>
             <parameter>
-                <name>ba</name>
-                <type>anywheresoftware.b4a.BA</type>
-            </parameter>
-            <parameter>
-                <name>adType</name>
-                <type>int</type>
-            </parameter>
-			<parameter>
-                <name>placement</name>
+                <name>name</name>
                 <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>value</name>
+                <type>double</type>
             </parameter>
         </method>
         <method>
@@ -102,67 +134,6 @@
             <parameter>
                 <name>adType</name>
                 <type>int</type>
-            </parameter>
-        </method>
-		        <method>
-            <name>setCustomStringSegment</name>
-            <comment></comment>
-            <returntype>void</returntype>
-            <parameter>
-                <name>name</name>
-                <type>java.lang.String</type>
-            </parameter>
-            <parameter>
-                <name>value</name>
-                <type>java.lang.String</type>
-            </parameter>
-        </method>
-        <method>
-            <name>setCustomDoubleSegment</name>
-            <comment></comment>
-            <returntype>void</returntype>
-            <parameter>
-                <name>name</name>
-                <type>java.lang.String</type>
-            </parameter>
-            <parameter>
-                <name>value</name>
-                <type>double</type>
-            </parameter>
-        </method>
-        <method>
-            <name>setCustomBooleanSegment</name>
-            <comment></comment>
-            <returntype>void</returntype>
-            <parameter>
-                <name>name</name>
-                <type>java.lang.String</type>
-            </parameter>
-            <parameter>
-                <name>value</name>
-                <type>boolean</type>
-            </parameter>
-        </method>
-        <method>
-            <name>setCustomIntSegment</name>
-            <comment></comment>
-            <returntype>void</returntype>
-            <parameter>
-                <name>name</name>
-                <type>java.lang.String</type>
-            </parameter>
-            <parameter>
-                <name>value</name>
-                <type>int</type>
-            </parameter>
-        </method>
-		<method>
-            <name>requestAndroidMPermissions</name>
-            <comment></comment>
-            <returntype>void</returntype>
-            <parameter>
-                <name>ba</name>
-                <type>anywheresoftware.b4a.BA</type>
             </parameter>
         </method>
         <method>
@@ -205,10 +176,22 @@
             <comment></comment>
             <returntype>void</returntype>
         </method>
-		<method>
-            <name>disableWriteExternalStoragePermissionCheck</name>
+        <method>
+            <name>showWithPlacement</name>
             <comment></comment>
-            <returntype>void</returntype>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>adType</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>placement</name>
+                <type>java.lang.String</type>
+            </parameter>
         </method>
         <method>
             <name>trackInAppPurchase</name>
@@ -245,6 +228,19 @@
             </parameter>
         </method>
         <method>
+            <name>setCustomStringRule</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>name</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>value</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
             <name>initialize</name>
             <comment></comment>
             <returntype>void</returntype>
@@ -275,10 +271,104 @@
             </parameter>
         </method>
         <method>
-            <name>setLogging</name>
+            <name>setCustomIntRule</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>name</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>value</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setEmail</name>
+			<comment></comment>
 			<returntype>void</returntype>
             <parameter>
-                <name>arg</name>
+                <name>email</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setBannerCallbacks</name>
+			<comment></comment>
+			<returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setAlcohol</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>alcohol</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setNonSkippableVideoCallbacks</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setBirthday</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>bDay</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setGender</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>gender</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setLogLevel</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>level</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Set log level</comment>
+        </method>
+        <method>
+            <name>setInterests</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>interests</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setSmartBanners</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>flag</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setBannerAnimation</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>flag</name>
                 <type>boolean</type>
             </parameter>
             <comment></comment>
@@ -293,30 +383,48 @@
             <comment></comment>
         </method>
         <method>
+            <name>set728x90Banners</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>flag</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setOccupation</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>occupation</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setRelation</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>relation</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
             <name>getVersion</name>
             <returntype>java.lang.String</returntype>
             <comment></comment>
         </method>
         <method>
-            <name>setBannerCallbacks</name>
+            <name>setUserId</name>
 			<returntype>void</returntype>
             <parameter>
-                <name>ba</name>
-                <type>anywheresoftware.b4a.BA</type>
+                <name>userId</name>
+                <type>java.lang.String</type>
             </parameter>
             <comment></comment>
         </method>
         <method>
             <name>setSkippableVideoCallbacks</name>
-			<returntype>void</returntype>
-            <parameter>
-                <name>ba</name>
-                <type>anywheresoftware.b4a.BA</type>
-            </parameter>
-            <comment></comment>
-        </method>
-        <method>
-            <name>setNonSkippableVideoCallbacks</name>
 			<returntype>void</returntype>
             <parameter>
                 <name>ba</name>
@@ -334,18 +442,46 @@
             <comment></comment>
         </method>
         <method>
-			<name>setTesting</name>
-			<comment></comment>
+            <name>setAge</name>
 			<returntype>void</returntype>
-			<parameter>
-				<name>arg</name>
-				<type>boolean</type>
-			</parameter>
+            <parameter>
+                <name>age</name>
+                <type>int</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setTesting</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>arg</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </method>
+        <method>
+            <name>setSmoking</name>
+			<returntype>void</returntype>
+            <parameter>
+                <name>smoking</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
         </method>
         <field>
-            <name>BANNER</name>
+            <name>ALCOHOL_NEGATIVE</name>
             <comment></comment>
-            <returntype>int</returntype>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>LOG_LEVEL_NONE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>GENDER_FEMALE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
         </field>
         <field>
             <name>SKIPPABLE_VIDEO</name>
@@ -358,19 +494,34 @@
             <returntype>int</returntype>
         </field>
         <field>
-            <name>NON_SKIPPABLE_VIDEO</name>
-            <comment></comment>
-            <returntype>int</returntype>
-        </field>
-        <field>
-            <name>REWARDED_VIDEO</name>
-            <comment></comment>
-            <returntype>int</returntype>
-        </field>
-        <field>
             <name>BANNER_BOTTOM</name>
             <comment></comment>
             <returntype>int</returntype>
+        </field>
+        <field>
+            <name>OCCUPATION_UNIVERSITY</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>OCCUPATION_OTHER</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>RELATION_SEARCHING</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ALCOHOL_NEUTRAL</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>SMOKING_NEUTRAL</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
         </field>
         <field>
             <name>NONE</name>
@@ -378,11 +529,96 @@
             <returntype>int</returntype>
         </field>
         <field>
+            <name>OCCUPATION_WORK</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
             <name>BANNER_TOP</name>
             <comment></comment>
             <returntype>int</returntype>
         </field>
+        <field>
+            <name>NON_SKIPPABLE_VIDEO</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RELATION_SINGLE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>RELATION_OTHER</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>GENDER_OTHER</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>SMOKING_NEGATIVE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>RELATION_MARRIED</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>BANNER</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RELATION_DATING</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>LOG_LEVEL_DEBUG</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>LOG_LEVEL_VERBOSE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ALCOHOL_POSITIVE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>GENDER_MALE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>REWARDED_VIDEO</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>OCCUPATION_SCHOOL</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>SMOKING_POSITIVE</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>RELATION_ENGAGED</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </field>
     </class>
-    <version>1.1412</version>
+    <version>1.1507</version>
     <author>Appodeal</author>
 </root>
