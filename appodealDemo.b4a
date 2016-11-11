@@ -67,6 +67,7 @@ Sub Globals
 	Dim checkTesting As CheckBox
 	Dim checkConfirm As CheckBox
 	Dim appKey As String = "fee50c333ff3825fd6ad6d38cff78154de3025546d47a84f" 'appodeal applicatrion key for bundle appcom.appodeal.test
+	Dim interstitialState As Int = 0 '//0 - not loaded; 1 - loading; 2 - loaded'
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -154,7 +155,13 @@ Sub init_Click
 	Appodeal.setRelation(Appodeal.RELATION_DATING)
 	Appodeal.setAlcohol(Appodeal.ALCOHOL_NEGATIVE)
 	Appodeal.setSmoking(Appodeal.SMOKING_NEGATIVE)
+	Appodeal.setUserId("your_custom_user_id")
 	
+	Appodeal.set728x90Banners(False)
+    Appodeal.setSmartBanners(False)
+    Appodeal.setBannerAnimation(False)
+	
+	Appodeal.setAutoCache(Appodeal.INTERSTITIAL, False)
 	Appodeal.initialize(appKey, Bit.Or(Appodeal.REWARDED_VIDEO, Appodeal.SKIPPABLE_VIDEO)) 'use this to initialize ad types
 	Appodeal.initialize(appKey, Bit.Or(Appodeal.INTERSTITIAL, Appodeal.BANNER))
     init.Enabled = False
@@ -166,8 +173,15 @@ Sub init_Click
 End Sub
 
 Sub showInterstitial_Click
-	Appodeal.showWithPlacement(Appodeal.INTERSTITIAL, "level_end")
-	Appodeal.setCustomBooleanRule("level_end", True)
+	If(interstitialState == 0) Then
+		Appodeal.cache(Appodeal.INTERSTITIAL)
+		interstitialState = 1
+	End If
+	If(interstitialState == 2) Then
+		Appodeal.showWithPlacement(Appodeal.INTERSTITIAL, "level_end")
+		Appodeal.setCustomBooleanRule("level_end", True)
+		interstitialState = 0
+	End If
 End Sub
 
 Sub showVideo_Click
@@ -196,10 +210,12 @@ End Sub
 
 'Sample usage of interstitial callbacks (don't forget to set handler and call setInterstitialCallbacks() before initialization)
 Sub Handler_InterstitialLoaded(isPrecache As Boolean)
+	interstitialState = 2
 	Log("interstitial loaded. precache: " & isPrecache)
 End Sub
 
 Sub Handler_InterstitialFailedToLoad()
+	interstitialState = 0
 	Log("interstitial failed to load")
 End Sub
 
