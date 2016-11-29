@@ -1,7 +1,7 @@
-﻿Version=5.02
+﻿Version=5.5
 NumberOfModules=0
 Build1=Default,com.appodeal.test
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="23"/>~\n~<supports-screens android:largeScreens="true"~\n~	android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@android:style/Theme.Holo")~\n~'End of default text.~\n~'Appodeal Permissions~\n~AddPermission (android.permission.INTERNET)~\n~AddPermission (android.permission.READ_PHONE_STATE)~\n~AddPermission (android.permission.ACCESS_NETWORK_STATE)~\n~AddPermission (android.permission.ACCESS_COARSE_LOCATION)~\n~'End Appodeal Permissions~\n~'Appodeal~\n~AddApplicationText(~\n~  <meta-data android:name="com.appodeal.framework" android:value="b4a" />~\n~  <activity android:name="com.appodeal.ads.InterstitialActivity" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />~\n~  <activity android:name="com.appodeal.ads.VideoActivity" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />~\n~  <activity android:name="com.appodeal.ads.LoaderActivity" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />~\n~  <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />~\n~  <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.chartboost.sdk.CBImpressionActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" android:excludeFromRecents="true" />~\n~  <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="org.nexage.sourcekit.mraid.MRAIDBrowser" android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.my.target.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />~\n~  <activity android:name="org.nexage.sourcekit.vast.activity.VPAIDActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="org.nexage.sourcekit.vast.activity.VASTActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.appodeal.ads.networks.vpaid.VPAIDActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.appodeal.ads.networks.SpotXActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.facebook.ads.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" />~\n~  <activity android:name="com.unity3d.ads.android2.view.UnityAdsFullscreenActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" />~\n~  <activity android:name="com.jirbo.adcolony.AdColonyOverlay" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.jirbo.adcolony.AdColonyFullscreen" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.jirbo.adcolony.AdColonyBrowser" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.vungle.publisher.FullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.startapp.android.publish.list3d.List3DActivity" android:theme="@android:style/Theme" />~\n~  <activity android:name="com.startapp.android.publish.OverlayActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.startapp.android.publish.FullScreenActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme" />~\n~  <service android:name="com.yandex.metrica.MetricaService" android:enabled="true" android:exported="true" android:process=":Metrica">~\n~	<intent-filter>~\n~		<category android:name="android.intent.category.DEFAULT" />~\n~		<action android:name="com.yandex.metrica.IMetricaService" />~\n~		<data android:scheme="metrica" />~\n~	</intent-filter>~\n~	<meta-data android:name="metrica:api:level" android:value="44" />~\n~  </service>~\n~  <receiver android:name="com.yandex.metrica.MetricaEventHandler" android:enabled="true" android:exported="true">~\n~	<intent-filter>~\n~		<action android:name="com.android.vending.INSTALL_REFERRER" />~\n~	</intent-filter>~\n~  </receiver>~\n~  <activity android:name="com.yandex.mobile.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />~\n~  <activity android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />    	~\n~  <activity android:name="com.appodeal.ads.VideoPlayerActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>~\n~  <activity android:name="com.cmcm.picks.PicksLoadingActivity" android:launchMode="singleTask" android:taskAffinity="com.cmcm.adsdk.nativead" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.cmcm.adsdk.interstitial.PicksInterstitialActivity" android:launchMode="singleTask" android:theme="@style/cm_interstital" />~\n~  <activity android:name="com.cmcm.picks.webview.PicksBrowser" android:launchMode="singleTask" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />~\n~  <service android:name="com.cmcm.picks.init.DownloadService" android:exported="false" android:process=":PickService" />~\n~  <activity android:name="com.cmcm.picks.vastvideo.FullScreenVideoActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="landscape" />~\n~)~\n~'End of Appodeal
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="23"/>~\n~<supports-screens android:largeScreens="true"~\n~	android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@android:style/Theme.Holo")~\n~'End of default text.~\n~'Appodeal Permissions~\n~AddPermission (android.permission.INTERNET)~\n~AddPermission (android.permission.READ_PHONE_STATE)~\n~AddPermission (android.permission.ACCESS_NETWORK_STATE)~\n~AddPermission (android.permission.ACCESS_COARSE_LOCATION)~\n~'End Appodeal Permissions~\n~'Appodeal~\n~AddApplicationText(~\n~  <meta-data android:name="com.appodeal.framework" android:value="b4a" />~\n~  <activity android:name="com.appodeal.ads.InterstitialActivity" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />~\n~  <activity android:name="com.appodeal.ads.VideoActivity" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />~\n~  <activity android:name="com.appodeal.ads.LoaderActivity" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />~\n~  <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />~\n~  <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.chartboost.sdk.CBImpressionActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" android:excludeFromRecents="true" />~\n~  <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="org.nexage.sourcekit.mraid.MRAIDBrowser" android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.my.target.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />~\n~  <activity android:name="org.nexage.sourcekit.vast.activity.VPAIDActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="org.nexage.sourcekit.vast.activity.VASTActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.appodeal.ads.networks.vpaid.VPAIDActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.appodeal.ads.networks.SpotXActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.facebook.ads.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />~\n~  <activity android:name="com.jirbo.adcolony.AdColonyOverlay" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.jirbo.adcolony.AdColonyFullscreen" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.jirbo.adcolony.AdColonyBrowser" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.vungle.publisher.FullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.startapp.android.publish.list3d.List3DActivity" android:theme="@android:style/Theme" />~\n~  <activity android:name="com.startapp.android.publish.OverlayActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />~\n~  <activity android:name="com.startapp.android.publish.FullScreenActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme" />~\n~  <service android:name="com.yandex.metrica.MetricaService" android:enabled="true" android:exported="true" android:process=":Metrica">~\n~	<intent-filter>~\n~		<category android:name="android.intent.category.DEFAULT" />~\n~		<action android:name="com.yandex.metrica.IMetricaService" />~\n~		<data android:scheme="metrica" />~\n~	</intent-filter>~\n~	<meta-data android:name="metrica:api:level" android:value="44" />~\n~  </service>~\n~  <receiver android:name="com.yandex.metrica.MetricaEventHandler" android:enabled="true" android:exported="true">~\n~	<intent-filter>~\n~		<action android:name="com.android.vending.INSTALL_REFERRER" />~\n~	</intent-filter>~\n~  </receiver>~\n~  <activity android:name="com.yandex.mobile.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />~\n~  <activity android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />    	~\n~  <activity android:name="com.appodeal.ads.VideoPlayerActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>~\n~  <activity android:name="com.cmcm.picks.PicksLoadingActivity" android:launchMode="singleTask" android:taskAffinity="com.cmcm.adsdk.nativead" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.cmcm.adsdk.interstitial.PicksInterstitialActivity" android:launchMode="singleTask" android:theme="@style/cm_interstital" />~\n~  <activity android:name="com.cmcm.picks.webview.PicksBrowser" android:launchMode="singleTask" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />~\n~  <service android:name="com.cmcm.picks.init.DownloadService" android:exported="false" android:process=":PickService" />~\n~  <activity android:name="com.cmcm.picks.vastvideo.FullScreenVideoActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="landscape" />~\n~  <activity android:name="com.revmob.FullscreenActivity" android:theme="@android:style/Theme.Translucent" android:configChanges="keyboardHidden|orientation"/>~\n~  <activity android:name="com.tapjoy.TJAdUnitActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:hardwareAccelerated="true" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />~\n~  <activity android:name="com.tapjoy.mraid.view.ActionHandler" android:configChanges="orientation|keyboardHidden|screenSize" />~\n~  <activity android:name="com.tapjoy.mraid.view.Browser" android:configChanges="orientation|keyboardHidden|screenSize" />~\n~  <activity android:name="com.tapjoy.TJContentActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:hardwareAccelerated="true" />~\n~~\n~  <activity android:name="com.unity3d.ads.adunit.AdUnitActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" />~\n~  <activity android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:hardwareAccelerated="false" />~\n~  <activity android:name="com.unity3d.ads2.adunit.AdUnitActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" />~\n~  <activity android:name="com.unity3d.ads2.adunit.AdUnitSoftwareActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:hardwareAccelerated="false" />~\n~)~\n~'End of Appodeal
 IconFile=
 NumberOfFiles=1
 File1=main.bal
@@ -21,29 +21,30 @@ Library2=appodealb4a
 	
 	'play services integration, remove it if you already have play services integrated (make sure you have specified modules integrated)
 	#AdditionalJar: google_play_services\libs\play-services-ads-9.4.0.jar
-	#AdditionalRes: D:\Dropbox\Appodeal\appodeal-demos\appodeal-b4a-sample\additional\google_play_services\res_google_play_ads, com.google.android.gms.ads.impl
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play_ads, com.google.android.gms.ads.impl
 	#AdditionalJar: google_play_services\libs\play-services-ads-lite-9.4.0.jar
-	#AdditionalRes: D:\Dropbox\Appodeal\appodeal-demos\appodeal-b4a-sample\additional\google_play_services\res_google_play_ads_lite, com.google.android.gms.ads
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play_ads_lite, com.google.android.gms.ads
 	#AdditionalJar: google_play_services\libs\play-services-base-9.4.0.jar
-	#AdditionalRes: D:\Dropbox\Appodeal\appodeal-demos\appodeal-b4a-sample\additional\google_play_services\res_google_play_base, com.google.android.gms.base
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play_base, com.google.android.gms.base
 	#AdditionalJar: google_play_services\libs\play-services-basement-9.4.0.jar
-	#AdditionalRes: D:\Dropbox\Appodeal\appodeal-demos\appodeal-b4a-sample\additional\google_play_services\res_google_play, com.google.android.gms
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play, com.google.android.gms
 	#AdditionalJar: google_play_services\libs\play-services-clearcut-9.4.0.jar
 	#AdditionalJar: google_play_services\libs\play-services-gass-9.4.0.jar
 	#AdditionalJar: google_play_services\libs\play-services-location-9.4.0.jar
 	#AdditionalJar: google_play_services\libs\play-services-tasks-9.4.0.jar
 	
 	'additional libraries required to support appodeal 
-	#AdditionalJar: unity_ads\unity-ads-1.5.8.jar
-	#AdditionalRes: D:\Dropbox\Appodeal\appodeal-demos\appodeal-b4a-sample\additional\unity_ads\res_unity_ads, com.unity3d.ads.android
-	#AdditionalJar: flurry-analytics-6.2.0.jar
-	#AdditionalJar: applovin-6.2.4.jar
-	#AdditionalJar: appodeal-1.15.2.jar
-	#AdditionalJar: chartboost-6.4.2.jar
-	#AdditionalJar: cheetah_mobile\cheetah-mobile-3.4.7.jar
-	#AdditionalRes: D:\Dropbox\Appodeal\appodeal-demos\appodeal-b4a-sample\additional\cheetah_mobile\res_cheetah_mobile, com.cmcm.adsdk
-	#AdditionalJar: my-target-4.5.6.jar
-	#AdditionalJar: yandex-metrica-2.41.jar
+	#AdditionalJar: unity-ads-2.0.5.jar
+	#AdditionalJar: flurry-analytics-6.6.0.jar
+	#AdditionalJar: applovin-6.3.2.jar
+	#AdditionalJar: appodeal-1.16.jar
+	#AdditionalJar: chartboost-6.6.1.jar
+	#AdditionalJar: cheetah_mobile\cheetah-mobile-3.5.jar
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\cheetah_mobile\res_cheetah_mobile, com.cmcm.adsdk
+	#AdditionalJar: facebook_audience_network\facebook_audience_network-4.17.jar
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\facebook_audience_network\fb_resources, com.facebook.ads
+	#AdditionalJar: my-target-4.5.15.jar
+	#AdditionalJar: yandex-metrica-2.51.jar
 #End Region
 
 #Region  Activity Attributes 
@@ -59,15 +60,14 @@ Sub Globals
 	Dim Appodeal As AppodealB4A
 	Dim init As Button
 	Dim showInterstitial As Button
-	Dim showVideo As Button
 	Dim rewardedVideo As Button
-	Dim showVideoOrInterstitial As Button
 	Dim showBanner As Button
 	Dim hideBanner As Button
 	Dim checkLogging As CheckBox
 	Dim checkTesting As CheckBox
 	Dim checkConfirm As CheckBox
 	Dim appKey As String = "fee50c333ff3825fd6ad6d38cff78154de3025546d47a84f" 'appodeal applicatrion key for bundle appcom.appodeal.test
+	Dim interstitialState As Int = 0 '//0 - not loaded; 1 - loading; 2 - loaded'
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -94,18 +94,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	showInterstitial.TextColor = Colors.Red
 	showInterstitial.Color = Colors.White
 	
-	showVideo.Text = "SKIPPABLE VIDEO"
-	showVideo.TextColor = Colors.Red
-	showVideo.Color = Colors.White
-	
 	rewardedVideo.Text = "REWARDED VIDEO"
 	rewardedVideo.TextColor = Colors.Red
 	rewardedVideo.Color = Colors.White
-	
-	showVideoOrInterstitial.Text = "SKIPPABLE VIDEO | INTERSTITIAL"
-	showVideoOrInterstitial.TextColor = Colors.Red
-	showVideoOrInterstitial.Color = Colors.White
-	
+
 	showBanner.Text = "BANNER"
 	showBanner.TextColor = Colors.Red
 	showBanner.Color = Colors.White
@@ -128,22 +120,39 @@ Sub init_Click
 	Appodeal.setEventHandler("Handler")
 	Appodeal.setRewardedVideoCallbacks()
 	Appodeal.setBannerCallbacks()
-	Appodeal.setSkippableVideoCallbacks()
 	Appodeal.setInterstitialCallbacks()
 	'Appodeal.setNonSkippableVideoCallbacks()
 	If(checkConfirm.Checked) Then
-		Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO)
+		Appodeal.confirm(Appodeal.INTERSTITIAL)
 	End If
 	If(checkTesting.Checked) Then
 		Appodeal.setTesting(True)
 	End If
 	If(checkLogging.Checked) Then
-		Appodeal.setLogging(True)
+		Appodeal.setLogLevel(Appodeal.LOG_LEVEL_VERBOSE)
 	End If
 	Appodeal.disableWriteExternalStoragePermissionCheck()
 	Appodeal.disableLocationPermissionCheck()
-	Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO)
-	Appodeal.initialize(appKey, Bit.Or(Appodeal.REWARDED_VIDEO, Appodeal.SKIPPABLE_VIDEO)) 'use this to initialize ad types
+	
+	'Set user settings for better targeting
+	Appodeal.initUserSettings()
+	Appodeal.setAge(25)
+	Appodeal.setBirthday("17/06/1990")
+	Appodeal.setEmail("hi@appodeal.com")
+	Appodeal.setGender(Appodeal.GENDER_FEMALE)
+	Appodeal.setInterests("reading, games, movies, snowboarding")
+	Appodeal.setOccupation(Appodeal.OCCUPATION_WORK)
+	Appodeal.setRelation(Appodeal.RELATION_DATING)
+	Appodeal.setAlcohol(Appodeal.ALCOHOL_NEGATIVE)
+	Appodeal.setSmoking(Appodeal.SMOKING_NEGATIVE)
+	Appodeal.setUserId("your_custom_user_id")
+	
+	Appodeal.set728x90Banners(False)
+    Appodeal.setSmartBanners(False)
+    Appodeal.setBannerAnimation(False)
+	
+	Appodeal.setAutoCache(Appodeal.INTERSTITIAL, False)
+	Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO) 'use this to initialize ad types
 	Appodeal.initialize(appKey, Bit.Or(Appodeal.INTERSTITIAL, Appodeal.BANNER))
     init.Enabled = False
 	init.Text = "INITIALIZED v" & Appodeal.getVersion()
@@ -154,13 +163,14 @@ Sub init_Click
 End Sub
 
 Sub showInterstitial_Click
-	Appodeal.showWithPlacement(Appodeal.INTERSTITIAL, "level_end")
-	Appodeal.setCustomBooleanSegment("level_end", True)
-End Sub
-
-Sub showVideo_Click
-	If(Appodeal.isLoaded(Appodeal.SKIPPABLE_VIDEO)) Then
-		Appodeal.show(Appodeal.SKIPPABLE_VIDEO)
+	If(interstitialState == 0) Then
+		Appodeal.cache(Appodeal.INTERSTITIAL)
+		interstitialState = 1
+	End If
+	If(interstitialState == 2) Then
+		Appodeal.showWithPlacement(Appodeal.INTERSTITIAL, "level_end")
+		Appodeal.setCustomBooleanRule("level_end", True)
+		interstitialState = 0
 	End If
 End Sub
 
@@ -168,10 +178,6 @@ Sub rewardedVideo_Click
 	If(Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) Then
 		Appodeal.show(Appodeal.REWARDED_VIDEO)
 	End If
-End Sub
-
-Sub showVideoOrInterstitial_Click
-	Appodeal.show(Bit.Or(Appodeal.INTERSTITIAL, Appodeal.SKIPPABLE_VIDEO))
 End Sub
 
 Sub showBanner_Click
@@ -183,11 +189,13 @@ Sub hideBanner_Click
 End Sub
 
 'Sample usage of interstitial callbacks (don't forget to set handler and call setInterstitialCallbacks() before initialization)
-Sub Handler_InterstitialLoaded()
-	Log("interstitial loaded")
+Sub Handler_InterstitialLoaded(isPrecache As Boolean)
+	interstitialState = 2
+	Log("interstitial loaded. precache: " & isPrecache)
 End Sub
 
 Sub Handler_InterstitialFailedToLoad()
+	interstitialState = 0
 	Log("interstitial failed to load")
 End Sub
 
@@ -203,9 +211,13 @@ Sub Handler_InterstitialClosed()
 	Log("interstitial closed")
 End Sub
 
+Sub Handler_InterstitialFinished()
+	Log("interstitial finished")
+End Sub
+
 'Sample usage of banner callbacks (don't forget to set handler and call setBannerCallbacks() before initialization)
-Sub Handler_BannerLoaded()
-	Log("banner loaded")
+Sub Handler_BannerLoaded(height As Int, isPrecache As Boolean)
+	Log("banner loaded. height: " & height & ", precache: " & isPrecache)
 End Sub
 
 Sub Handler_BannerFailedToLoad()
@@ -233,8 +245,8 @@ Sub Handler_RewardedVideoShown()
 	Log("rewarded video shown")
 End Sub
 
-Sub Handler_RewardedVideoClosed()
-	Log("rewarded video closed")
+Sub Handler_RewardedVideoClosed(finished As Boolean)
+	Log("rewarded video closed. finished: " & finished)
 End Sub
 
 Sub Handler_RewardedVideoFinished(amount As Int, name As String)
@@ -255,8 +267,8 @@ Sub Handler_NonSkippableVideoShown()
 	Log("non skippable video shown")
 End Sub
 
-Sub Handler_NonSkippableVideoClosed()
-	Log("non skippable video closed")
+Sub Handler_NonSkippableVideoClosed(finished As Boolean)
+	Log("non skippable video closed. finished: " & finished)
 End Sub
 
 Sub Handler_NonSkippableVideoFinished()
@@ -277,8 +289,8 @@ Sub Handler_SkippableVideoShown()
 	Log("skippable video shown")
 End Sub
 
-Sub Handler_SkippableVideoClosed()
-	Log("skippable video closed")
+Sub Handler_SkippableVideoClosed(finished As Boolean)
+	Log("skippable video closed. finished: " & finished)
 End Sub
 
 Sub Handler_SkippableVideoFinished()
