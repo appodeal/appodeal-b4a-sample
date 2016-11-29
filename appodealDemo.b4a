@@ -34,15 +34,17 @@ Library2=appodealb4a
 	#AdditionalJar: google_play_services\libs\play-services-tasks-9.4.0.jar
 	
 	'additional libraries required to support appodeal 
-	#AdditionalJar: unity-ads-2.0.4.jar
-	#AdditionalJar: flurry-analytics-6.5.0.jar
-	#AdditionalJar: applovin-6.3.0.jar
-	#AdditionalJar: appodeal-1.15.7.jar
-	#AdditionalJar: chartboost-6.5.1.jar
-	#AdditionalJar: cheetah_mobile\cheetah-mobile-3.4.7.jar
+	#AdditionalJar: unity-ads-2.0.5.jar
+	#AdditionalJar: flurry-analytics-6.6.0.jar
+	#AdditionalJar: applovin-6.3.2.jar
+	#AdditionalJar: appodeal-1.16.jar
+	#AdditionalJar: chartboost-6.6.1.jar
+	#AdditionalJar: cheetah_mobile\cheetah-mobile-3.5.jar
 	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\cheetah_mobile\res_cheetah_mobile, com.cmcm.adsdk
-	#AdditionalJar: my-target-4.5.10.jar
-	#AdditionalJar: yandex-metrica-2.41.jar
+	#AdditionalJar: facebook_audience_network\facebook_audience_network-4.17.jar
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\facebook_audience_network\fb_resources, com.facebook.ads
+	#AdditionalJar: my-target-4.5.15.jar
+	#AdditionalJar: yandex-metrica-2.51.jar
 #End Region
 
 #Region  Activity Attributes 
@@ -58,9 +60,7 @@ Sub Globals
 	Dim Appodeal As AppodealB4A
 	Dim init As Button
 	Dim showInterstitial As Button
-	Dim showVideo As Button
 	Dim rewardedVideo As Button
-	Dim showVideoOrInterstitial As Button
 	Dim showBanner As Button
 	Dim hideBanner As Button
 	Dim checkLogging As CheckBox
@@ -94,18 +94,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	showInterstitial.TextColor = Colors.Red
 	showInterstitial.Color = Colors.White
 	
-	showVideo.Text = "SKIPPABLE VIDEO"
-	showVideo.TextColor = Colors.Red
-	showVideo.Color = Colors.White
-	
 	rewardedVideo.Text = "REWARDED VIDEO"
 	rewardedVideo.TextColor = Colors.Red
 	rewardedVideo.Color = Colors.White
-	
-	showVideoOrInterstitial.Text = "SKIPPABLE VIDEO | INTERSTITIAL"
-	showVideoOrInterstitial.TextColor = Colors.Red
-	showVideoOrInterstitial.Color = Colors.White
-	
+
 	showBanner.Text = "BANNER"
 	showBanner.TextColor = Colors.Red
 	showBanner.Color = Colors.White
@@ -128,11 +120,10 @@ Sub init_Click
 	Appodeal.setEventHandler("Handler")
 	Appodeal.setRewardedVideoCallbacks()
 	Appodeal.setBannerCallbacks()
-	Appodeal.setSkippableVideoCallbacks()
 	Appodeal.setInterstitialCallbacks()
 	'Appodeal.setNonSkippableVideoCallbacks()
 	If(checkConfirm.Checked) Then
-		Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO)
+		Appodeal.confirm(Appodeal.INTERSTITIAL)
 	End If
 	If(checkTesting.Checked) Then
 		Appodeal.setTesting(True)
@@ -142,7 +133,6 @@ Sub init_Click
 	End If
 	Appodeal.disableWriteExternalStoragePermissionCheck()
 	Appodeal.disableLocationPermissionCheck()
-	Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO)
 	
 	'Set user settings for better targeting
 	Appodeal.initUserSettings()
@@ -162,7 +152,7 @@ Sub init_Click
     Appodeal.setBannerAnimation(False)
 	
 	Appodeal.setAutoCache(Appodeal.INTERSTITIAL, False)
-	Appodeal.initialize(appKey, Bit.Or(Appodeal.REWARDED_VIDEO, Appodeal.SKIPPABLE_VIDEO)) 'use this to initialize ad types
+	Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO) 'use this to initialize ad types
 	Appodeal.initialize(appKey, Bit.Or(Appodeal.INTERSTITIAL, Appodeal.BANNER))
     init.Enabled = False
 	init.Text = "INITIALIZED v" & Appodeal.getVersion()
@@ -184,20 +174,10 @@ Sub showInterstitial_Click
 	End If
 End Sub
 
-Sub showVideo_Click
-	If(Appodeal.isLoaded(Appodeal.SKIPPABLE_VIDEO)) Then
-		Appodeal.show(Appodeal.SKIPPABLE_VIDEO)
-	End If
-End Sub
-
 Sub rewardedVideo_Click
 	If(Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) Then
 		Appodeal.show(Appodeal.REWARDED_VIDEO)
 	End If
-End Sub
-
-Sub showVideoOrInterstitial_Click
-	Appodeal.show(Bit.Or(Appodeal.INTERSTITIAL, Appodeal.SKIPPABLE_VIDEO))
 End Sub
 
 Sub showBanner_Click
@@ -229,6 +209,10 @@ End Sub
 
 Sub Handler_InterstitialClosed()
 	Log("interstitial closed")
+End Sub
+
+Sub Handler_InterstitialFinished()
+	Log("interstitial finished")
 End Sub
 
 'Sample usage of banner callbacks (don't forget to set handler and call setBannerCallbacks() before initialization)
