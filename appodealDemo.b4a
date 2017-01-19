@@ -48,6 +48,7 @@ Library2=appodealb4a
 #Region  Activity Attributes 
 	#FullScreen: True
 	#IncludeTitle: False
+	#SupportedOrientations: landscape
 #End Region
 
 Sub Process_Globals
@@ -56,23 +57,34 @@ End Sub
 
 Sub Globals
 	Dim Appodeal As AppodealB4A
+	Dim adType As Spinner
 	Dim init As Button
-	Dim showInterstitial As Button
-	Dim showVideo As Button
-	Dim rewardedVideo As Button
-	Dim showVideoOrInterstitial As Button
-	Dim showBanner As Button
-	Dim hideBanner As Button
+	Dim cache As Button
+	Dim hide As Button
+	Dim isLoaded As Button
+	Dim isPrecache As Button
+	Dim show As Button
+	Dim showWithPlacement As Button
 	Dim checkLogging As CheckBox
 	Dim checkTesting As CheckBox
 	Dim checkConfirm As CheckBox
+	Dim checkAutocache As CheckBox
+	Dim checkDisableSmartBanners As CheckBox
+	Dim checkDisableBannerAnimation As CheckBox
+	Dim checkDisable728x90Banners As CheckBox
+	Dim checkEnableTriggerOnLoadedTwice As CheckBox
+	Dim checkDisableLocationPermissionCheck As CheckBox
+	Dim checkDisableWriteExternalStorageCheck As CheckBox
+
 	Dim appKey As String = "fee50c333ff3825fd6ad6d38cff78154de3025546d47a84f" 'appodeal applicatrion key for bundle appcom.appodeal.test
-	Dim interstitialState As Int = 0 '//0 - not loaded; 1 - loading; 2 - loaded'
+
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("main")
 	Activity.Color = Colors.Red
+	
+	adType.AddAll(Array As String("Ad Type", "Banner Top", "Banner Bottom", "Interstitial", "Skippable Video", "Rewarded Video", "Interstitial or Video"))
 	
 	checkLogging.Text = "Log"
 	checkLogging.TextColor = Colors.White
@@ -86,33 +98,61 @@ Sub Activity_Create(FirstTime As Boolean)
 	checkConfirm.TextColor = Colors.White
 	checkConfirm.Color = Colors.Red
 	
-  	init.Text = "INITIALIZE"
+	checkAutocache.Text = "AutoCache"
+	checkAutocache.TextColor = Colors.White
+	checkAutocache.Color = Colors.Red
+	
+	checkDisableSmartBanners.Text = "Disable Smart Banners"
+	checkDisableSmartBanners.TextColor = Colors.White
+	checkDisableSmartBanners.Color = Colors.Red
+	
+	checkDisableBannerAnimation.Text = "Disable Banner Animation"
+	checkDisableBannerAnimation.TextColor = Colors.White
+	checkDisableBannerAnimation.Color = Colors.Red
+	
+	checkDisable728x90Banners.Text = "Disable 728x90 Banners"
+	checkDisable728x90Banners.TextColor = Colors.White
+	checkDisable728x90Banners.Color = Colors.Red
+	
+	checkEnableTriggerOnLoadedTwice.Text = "Trigger onLoaded on precache"
+	checkEnableTriggerOnLoadedTwice.TextColor = Colors.White
+	checkEnableTriggerOnLoadedTwice.Color = Colors.Red
+	
+	checkDisableLocationPermissionCheck.Text = "Disable Location Permission Check"
+	checkDisableLocationPermissionCheck.TextColor = Colors.White
+	checkDisableLocationPermissionCheck.Color = Colors.Red
+	
+	checkDisableWriteExternalStorageCheck.Text = "Disable Write External Storage Check"
+	checkDisableWriteExternalStorageCheck.TextColor = Colors.White
+	checkDisableWriteExternalStorageCheck.Color = Colors.Red
+	
+  	init.Text = "Initialize"
 	init.TextColor = Colors.Red
 	init.Color = Colors.White
 	
-	showInterstitial.Text = "INTERSTITIAL"
-	showInterstitial.TextColor = Colors.Red
-	showInterstitial.Color = Colors.White
+	cache.Text = "Cache"
+	cache.TextColor = Colors.Red
+	cache.Color = Colors.White
 	
-	showVideo.Text = "SKIPPABLE VIDEO"
-	showVideo.TextColor = Colors.Red
-	showVideo.Color = Colors.White
+	isLoaded.Text = "Is Loaded?"
+	isLoaded.TextColor = Colors.Red
+	isLoaded.Color = Colors.White
 	
-	rewardedVideo.Text = "REWARDED VIDEO"
-	rewardedVideo.TextColor = Colors.Red
-	rewardedVideo.Color = Colors.White
+	isPrecache.Text = "Is Precache?"
+	isPrecache.TextColor = Colors.Red
+	isPrecache.Color = Colors.White
 	
-	showVideoOrInterstitial.Text = "SKIPPABLE VIDEO | INTERSTITIAL"
-	showVideoOrInterstitial.TextColor = Colors.Red
-	showVideoOrInterstitial.Color = Colors.White
+	show.Text = "Show"
+	show.TextColor = Colors.Red
+	show.Color = Colors.White
 	
-	showBanner.Text = "BANNER"
-	showBanner.TextColor = Colors.Red
-	showBanner.Color = Colors.White
+	showWithPlacement.Text = "Show With Placement"
+	showWithPlacement.TextColor = Colors.Red
+	showWithPlacement.Color = Colors.White
 	
-	hideBanner.Text = "HIDE BANNER"
-	hideBanner.TextColor = Colors.Red
-	hideBanner.Color = Colors.White
+	hide.Text = "Hide"
+	hide.TextColor = Colors.Red
+	hide.Color = Colors.White
 End Sub
 
 Sub Activity_Resume
@@ -121,6 +161,26 @@ End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
 
+End Sub
+
+Sub Get_Ad_Type() As Int
+	Select Case adType.SelectedIndex
+		Case -1, 0
+			Return Appodeal.NONE
+		Case 1
+			Return Appodeal.BANNER_TOP
+		Case 2
+			Return Appodeal.BANNER_BOTTOM
+		Case 3
+			Return Appodeal.INTERSTITIAL
+		Case 4
+			Return Appodeal.SKIPPABLE_VIDEO
+		Case 5
+			Return Appodeal.REWARDED_VIDEO
+		Case 6
+			Return Bit.Or(Appodeal.INTERSTITIAL, Appodeal.SKIPPABLE_VIDEO)
+	End Select
+	Return 0
 End Sub
 
 Sub init_Click
@@ -140,9 +200,15 @@ Sub init_Click
 	If(checkLogging.Checked) Then
 		Appodeal.setLogLevel(Appodeal.LOG_LEVEL_VERBOSE)
 	End If
-	Appodeal.disableWriteExternalStoragePermissionCheck()
-	Appodeal.disableLocationPermissionCheck()
-	Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO)
+	If(checkDisableLocationPermissionCheck.Checked) Then
+		Appodeal.disableWriteExternalStoragePermissionCheck()
+	End If
+	If(checkDisableWriteExternalStorageCheck.Checked) Then
+		Appodeal.disableLocationPermissionCheck()
+	End If
+	If(checkConfirm.Checked) Then
+		Appodeal.confirm(Get_Ad_Type)
+	End If
 	
 	'Set user settings for better targeting
 	Appodeal.initUserSettings()
@@ -157,65 +223,48 @@ Sub init_Click
 	Appodeal.setSmoking(Appodeal.SMOKING_NEGATIVE)
 	Appodeal.setUserId("your_custom_user_id")
 	
-	Appodeal.set728x90Banners(False)
-    Appodeal.setSmartBanners(False)
-    Appodeal.setBannerAnimation(False)
+	Appodeal.set728x90Banners( checkDisable728x90Banners.Checked == False )
+    Appodeal.setSmartBanners(checkDisableSmartBanners.Checked == False)
+    Appodeal.setBannerAnimation(checkDisableBannerAnimation.Checked == False)
+	Appodeal.setOnLoadedTriggerBoth(Get_Ad_Type, checkEnableTriggerOnLoadedTwice.Checked)
 	
-	Appodeal.setAutoCache(Appodeal.INTERSTITIAL, False)
-	Appodeal.initialize(appKey, Bit.Or(Appodeal.REWARDED_VIDEO, Appodeal.SKIPPABLE_VIDEO)) 'use this to initialize ad types
-	Appodeal.initialize(appKey, Bit.Or(Appodeal.INTERSTITIAL, Appodeal.BANNER))
+	Appodeal.setAutoCache(Get_Ad_Type, checkAutocache.Checked)
+	Appodeal.initialize(appKey, Get_Ad_Type) 'use this to initialize ad types
     init.Enabled = False
 	init.Text = "INITIALIZED v" & Appodeal.getVersion()
-	
-	checkLogging.Enabled = False
-	checkTesting.Enabled = False
-	checkConfirm.Enabled = False
 End Sub
 
-Sub showInterstitial_Click
-	If(interstitialState == 0) Then
-		Appodeal.cache(Appodeal.INTERSTITIAL)
-		interstitialState = 1
-	End If
-	If(interstitialState == 2) Then
-		Appodeal.showWithPlacement(Appodeal.INTERSTITIAL, "level_end")
-		Appodeal.setCustomBooleanRule("level_end", True)
-		interstitialState = 0
-	End If
+
+Sub showWithPlacement_Click
+	Appodeal.showWithPlacement(Get_Ad_Type, "level_end")
 End Sub
 
-Sub showVideo_Click
-	If(Appodeal.isLoaded(Appodeal.SKIPPABLE_VIDEO)) Then
-		Appodeal.show(Appodeal.SKIPPABLE_VIDEO)
-	End If
+Sub show_Click
+	Appodeal.show(Get_Ad_Type)
 End Sub
 
-Sub rewardedVideo_Click
-	If(Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) Then
-		Appodeal.show(Appodeal.REWARDED_VIDEO)
-	End If
+Sub isPrecache_Click
+	Log("Is precache: " & Appodeal.isPrecache(Get_Ad_Type))
 End Sub
 
-Sub showVideoOrInterstitial_Click
-	Appodeal.show(Bit.Or(Appodeal.INTERSTITIAL, Appodeal.SKIPPABLE_VIDEO))
+Sub isLoaded_Click
+	Log("Is loaded: " & Appodeal.isLoaded(Get_Ad_Type))
 End Sub
 
-Sub showBanner_Click
-	Appodeal.show(Appodeal.BANNER_BOTTOM)
+Sub hide_Click
+	Appodeal.hide(Get_Ad_Type)
 End Sub
 
-Sub hideBanner_Click
-	Appodeal.hide(Appodeal.BANNER)
+Sub cache_Click
+	Appodeal.cache(Get_Ad_Type)
 End Sub
 
 'Sample usage of interstitial callbacks (don't forget to set handler and call setInterstitialCallbacks() before initialization)
-Sub Handler_InterstitialLoaded(isPrecache As Boolean)
-	interstitialState = 2
-	Log("interstitial loaded. precache: " & isPrecache)
+Sub Handler_InterstitialLoaded(isPrecachePar As Boolean)
+	Log("interstitial loaded. precache: " & isPrecachePar)
 End Sub
 
 Sub Handler_InterstitialFailedToLoad()
-	interstitialState = 0
 	Log("interstitial failed to load")
 End Sub
 
@@ -232,8 +281,8 @@ Sub Handler_InterstitialClosed()
 End Sub
 
 'Sample usage of banner callbacks (don't forget to set handler and call setBannerCallbacks() before initialization)
-Sub Handler_BannerLoaded(height As Int, isPrecache As Boolean)
-	Log("banner loaded. height: " & height & ", precache: " & isPrecache)
+Sub Handler_BannerLoaded(height As Int, isPrecachePar As Boolean)
+	Log("banner loaded. height: " & height & ", precache: " & isPrecachePar)
 End Sub
 
 Sub Handler_BannerFailedToLoad()
