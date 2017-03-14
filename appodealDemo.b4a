@@ -230,8 +230,6 @@ Sub init_Click
 	
 	Appodeal.setAutoCache(Get_Ad_Type, checkAutocache.Checked)
 	Appodeal.initialize(appKey, Get_Ad_Type) 'use this to initialize ad types
-    init.Enabled = False
-	init.Text = "INITIALIZED v" & Appodeal.getVersion()
 End Sub
 
 
