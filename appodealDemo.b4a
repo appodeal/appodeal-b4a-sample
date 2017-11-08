@@ -20,21 +20,21 @@ Library2=appodealb4a
 	#AdditionalJar: android-support-v4-23.1.1.jar
 	
 	'play services integration, remove it if you already have play services integrated (make sure you have specified modules integrated)
-	#AdditionalJar: google_play_services\libs\play-services-ads-9.4.0.jar
+	#AdditionalJar: google_play_services\libs\play-services-ads-10.2.1.jar
 	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play_ads, com.google.android.gms.ads.impl
-	#AdditionalJar: google_play_services\libs\play-services-ads-lite-9.4.0.jar
+	#AdditionalJar: google_play_services\libs\play-services-ads-lite-10.2.1.jar
 	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play_ads_lite, com.google.android.gms.ads
-	#AdditionalJar: google_play_services\libs\play-services-base-9.4.0.jar
+	#AdditionalJar: google_play_services\libs\play-services-base-10.2.1.jar
 	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play_base, com.google.android.gms.base
-	#AdditionalJar: google_play_services\libs\play-services-basement-9.4.0.jar
-	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play, com.google.android.gms
-	#AdditionalJar: google_play_services\libs\play-services-clearcut-9.4.0.jar
-	#AdditionalJar: google_play_services\libs\play-services-gass-9.4.0.jar
-	#AdditionalJar: google_play_services\libs\play-services-location-9.4.0.jar
-	#AdditionalJar: google_play_services\libs\play-services-tasks-9.4.0.jar
+	#AdditionalJar: google_play_services\libs\play-services-basement-10.2.1.jar
+	#AdditionalRes: D:\work\plugins\b4a\appodeal-b4a-sample\additional\google_play_services\res_google_play_basement, com.google.android.gms
+	#AdditionalJar: google_play_services\libs\play-services-clearcut-10.2.1.jar
+	#AdditionalJar: google_play_services\libs\play-services-gass-10.2.1.jar
+	#AdditionalJar: google_play_services\libs\play-services-location-10.2.1.jar
+	#AdditionalJar: google_play_services\libs\play-services-tasks-10.2.1.jar
 	
 	'additional libraries required to support appodeal 
-	#AdditionalJar: appodeal-2.1.4.jar
+	#AdditionalJar: appodeal-2.1.7.jar
 	#AdditionalJar: inmobi-6.2.3.jar
 	#AdditionalJar: picasso-2.5.2.jar
 	#AdditionalJar: startapp-3.6.2.jar
@@ -225,6 +225,7 @@ End Sub
 
 Sub hide_Click
 	Appodeal.hide(Get_Ad_Type)
+	Appodeal.destroy(Get_Ad_Type)
 End Sub
 
 Sub cache_Click
